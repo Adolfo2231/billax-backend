@@ -28,11 +28,19 @@ def create_app(config_class=None):
     # Configure CORS based on environment
     if config_class == ProductionConfig:
         cors.init_app(app, resources={
-            r"/api/*": {"origins": [app.config.get('FRONTEND_URL')]}
+            r"/*": {
+                "origins": [app.config.get('FRONTEND_URL')],
+                "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+                "allow_headers": ["Content-Type", "Authorization", "X-Requested-With"]
+            }
         })
     else:
         cors.init_app(app, resources={
-            r"/api/*": {"origins": "*"}
+            r"/*": {
+                "origins": "*",
+                "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+                "allow_headers": ["Content-Type", "Authorization", "X-Requested-With"]
+            }
         })
     
     # Register routes
