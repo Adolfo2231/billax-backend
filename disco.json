@@ -1,0 +1,13 @@
+{
+    "version": "1.0",
+    "services": {
+        "web": {
+            "command": "python run.py",
+            "port": 8000,
+            "env": {
+                "FLASK_ENV": "production",
+                "FLASK_APP": "run.py"
+            }
+        }
+    }
+} 
