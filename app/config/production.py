@@ -24,7 +24,7 @@ class ProductionConfig(Config):
     PLAID_ENV = os.environ.get('PLAID_ENV')
     
     # Frontend URL for CORS - Use environment variable or default to Disco subdomain
-    FRONTEND_URL = os.environ.get('FRONTEND_URL', 'https://billax.srv-13f27fc66efe43ff.ondis.co')
+    FRONTEND_URL = os.environ.get('FRONTEND_URL', 'https://billax-frontend.holbie.dev.pr')
     
     # Logging
     LOG_LEVEL = 'WARNING'
